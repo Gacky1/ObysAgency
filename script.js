@@ -1,27 +1,42 @@
-gsap.from(".line h1",{
-    y:150,
-    stagger:0.25,
-    duration:0.6,
-    delay:0.5
-})
+var tl = gsap.timeline();
+tl.from(".line h1,h2", {
+  y: 150,
+  stagger: 0.25,
+  duration: 0.6,
+  delay: 0.5,
+});
 
-var h5timer=document.querySelector("#line1-part1 h5")
-var grow=0;
+tl.from("#line1-part1", {
+  opacity: 0,
+  onStart: function () {
+    var h5timer = document.querySelector("#line1-part1 h5");
+    var grow = 0;
 
-setInterval(function(){
-    if(grow<100){
+    setInterval(function () {
+      if (grow < 100) {
         grow++;
-        h5timer.innerHTML=grow;
-    }else{
-        h5timer.innerHTML="100";
-    }
-},30)
+        h5timer.innerHTML = grow;
+      } else {
+        h5timer.innerHTML = "100";
+      }
+    }, 30);
+  },
+});
 
 
-var tl=gsap.timeline()
-tl.from(".line1 h1",{
-    y:150,
-    stagger:0.25,
-    duration:0.6,
-    delay:0.5
+tl.to("#loader", {
+  opacity: 0,
+  duration: 0.2,
+  delay: 3.8,
+});
+
+tl.from("#page1",{
+    delay:0.2,
+    y:1600,
+    opacity: 0,
+    ease:Power4,
+    duration:0.5,
 })
+tl.to("#loader", {
+  display: "none",
+});
