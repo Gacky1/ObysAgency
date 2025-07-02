@@ -1,7 +1,16 @@
 @font-face {
     font-family: "Plain Light";
-    src: url();
+    src: url(/plain-light-webfont.ttf) ;
 }
+@font-face {
+    font-family: "silk serif";
+    src: url(/silk-serif-webfont.ttf) ;
+}
+@font-face {
+    font-family: "Plain Regular";
+    src: url(/plain-regular-webfont.ttf) ;
+}
+
 
 * {
   margin: 0;
